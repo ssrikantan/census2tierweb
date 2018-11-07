@@ -1,0 +1,11 @@
+/src/censusapi/bin/Release/netcoreapp2.0/censusapi.deps.json
+/src/censusapi/bin/Release/netcoreapp2.0/censusapi.runtimeconfig.json
+/src/censusapi/bin/Release/netcoreapp2.0/censusapi.runtimeconfig.dev.json
+/src/censusapi/bin/Release/netcoreapp2.0/censusapi.dll
+/src/censusapi/bin/Release/netcoreapp2.0/censusapi.pdb
+/src/censusapi/obj/Release/netcoreapp2.0/censusapi.csprojAssemblyReference.cache
+/src/censusapi/obj/Release/netcoreapp2.0/censusapi.csproj.CoreCompileInputs.cache
+/src/censusapi/obj/Release/netcoreapp2.0/censusapi.AssemblyInfoInputs.cache
+/src/censusapi/obj/Release/netcoreapp2.0/censusapi.AssemblyInfo.cs
+/src/censusapi/obj/Release/netcoreapp2.0/censusapi.dll
+/src/censusapi/obj/Release/netcoreapp2.0/censusapi.pdb

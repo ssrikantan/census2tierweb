@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ApplicationManifest ApplicationTypeName="census2tierappType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="censusapiPkg" ServiceManifestVersion="1.0.0"/>
+    <Policies>
+        <ContainerHostPolicies CodePackageRef="Code">
+        <!--RepositoryCredentials AccountName="sfwebacr" Password="pwd" PasswordEncrypted="false"/-->
+        <PortBinding EndpointRef="censusapiTypeEndpoint" ContainerPort="80"/>
+        <HealthConfig RestartContainerOnUnhealthyDockerHealthStatus="false" IncludeDockerHealthStatusInSystemHealthReport="true"/>
+        </ContainerHostPolicies>
+    </Policies>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="censusappPkg" ServiceManifestVersion="1.0.0"/>
+     <Policies>
+        <ContainerHostPolicies CodePackageRef="Code">
+        <!--RepositoryCredentials AccountName="sfwebacr" Password="pwd" PasswordEncrypted="false"/-->
+        <PortBinding EndpointRef="censusappTypeEndpoint" ContainerPort="80"/>
+        <HealthConfig RestartContainerOnUnhealthyDockerHealthStatus="false" IncludeDockerHealthStatusInSystemHealthReport="true"/>
+        </ContainerHostPolicies>
+    </Policies>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <Service Name="censusapi" ServiceDnsName="sfcensusapi">
+      <StatelessService ServiceTypeName="censusapiType" InstanceCount="2" >
+        <SingletonPartition/>
+      </StatelessService>
+    </Service>
+    <Service Name="censusapp">
+      <StatelessService ServiceTypeName="censusappType" InstanceCount="2">
+        <SingletonPartition/>
+      </StatelessService>
+    </Service>
+  </DefaultServices>
+  <Policies>
+      <HealthPolicy MaxPercentUnhealthyDeployedApplications="20" ConsiderWarningAsError="true">
+      <DefaultServiceTypeHealthPolicy MaxPercentUnhealthyServices="0"/>
+      <ServiceTypeHealthPolicy ServiceTypeName="censusapiType" MaxPercentUnhealthyServices="20"/>
+      <ServiceTypeHealthPolicy ServiceTypeName="censusappType" MaxPercentUnhealthyServices="20"/>
+      </HealthPolicy>
+  </Policies>
+</ApplicationManifest>

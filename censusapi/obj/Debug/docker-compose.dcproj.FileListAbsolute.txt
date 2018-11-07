@@ -1,0 +1,12 @@
+C:\Users\Srikantansurface\source\repos\censusapi\bin\Debug\censusapi.dll
+C:\Users\Srikantansurface\source\repos\censusapi\bin\Debug\censusapi.pdb
+C:\Users\Srikantansurface\source\repos\censusapi\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\Srikantansurface\source\repos\censusapi\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Srikantansurface\source\repos\censusapi\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\bin\Debug\Microsoft.Azure.Documents.ServiceInterop.dll
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\bin\Debug\DocumentDB.Spatial.Sql.dll
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\bin\Debug\censusapi.dll
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\bin\Debug\censusapi.pdb
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Srikantansurface\Census2TierWeb\censusapi\obj\Debug\docker-compose.dcproj.CopyComplete

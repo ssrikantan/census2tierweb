@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  censusapp:
+    image: censusapp
+    build:
+      context: .
+      dockerfile: censusapp/Dockerfile
+    ports:
+      - "5001:80"

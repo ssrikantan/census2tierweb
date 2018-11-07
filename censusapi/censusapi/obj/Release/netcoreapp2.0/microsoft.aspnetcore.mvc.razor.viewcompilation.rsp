@@ -1,0 +1,5 @@
+/src/censusapi
+--output-path=obj/Release/netcoreapp2.0/
+--application-name=censusapi
+--content-root=/src/censusapi
+--file=

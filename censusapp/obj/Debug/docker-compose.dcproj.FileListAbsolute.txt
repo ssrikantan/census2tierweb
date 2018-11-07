@@ -1,0 +1,14 @@
+C:\Users\Srikantansurface\source\repos\censusapp\bin\Debug\censusapp.Views.dll
+C:\Users\Srikantansurface\source\repos\censusapp\bin\Debug\censusapp.Views.pdb
+C:\Users\Srikantansurface\source\repos\censusapp\bin\Debug\censusapp.dll
+C:\Users\Srikantansurface\source\repos\censusapp\bin\Debug\censusapp.pdb
+C:\Users\Srikantansurface\source\repos\censusapp\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\Srikantansurface\source\repos\censusapp\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Srikantansurface\source\repos\censusapp\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\bin\Debug\censusapp.Views.dll
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\bin\Debug\censusapp.Views.pdb
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\bin\Debug\censusapp.dll
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\bin\Debug\censusapp.pdb
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Srikantansurface\Census2TierWeb\censusapp\obj\Debug\docker-compose.dcproj.CopyComplete
