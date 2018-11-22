@@ -24,6 +24,8 @@ The Source files from the two Projects are checked into a Git Repository in Azur
 The steps above are repeated after making code changes to the Web API Project. The order of priority of the Cosmos DB connection endpoints are modified for deployment to Azure Region in Southeast Asia. The container image for the Mvc Project would be the same in both the regions.
 
 ## Packaging the Application for deployment to Service Fabric
-The Yeoman tool creates an Application and adds two Service types for the Mvc and Web API applications. At the prompt, provide the names of the container images uploaded to Docker Hub and the number of instances of containers of each Service type to deploy in Service Fabric. See below:
+The Yeoman tool creates an Application and adds two Service types, each representing the Mvc and Web API applications. At the prompt, provide the names of the container images uploaded to Docker Hub and the number of instances of containers of each Service type to deploy in Service Fabric. See below:
 
 <img src="./images/yeomanGen.PNG" alt="drawing" height="700px"/>
+
+Application and Service Manifest xml files generated after this step need some additional configurations. The sample output from this step is included here [Github repo](https://github.com/ssrikantan/census2tierweb/apppkg)
