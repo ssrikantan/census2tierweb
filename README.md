@@ -63,3 +63,23 @@ Use the ARM Template **SF-Std-ELB-ZonalDeployment.json** to deploy the cluster t
 This step creates 2 Service Fabric clusters, each in a separate Azure Availability Zone in one Region (US East 2). A Standard SKU Load Balancer balances user requests across these two clusters, in an Active-Active configuration. Run the Template again to deploy the cluster to the second region, i.e. Southeast Asia.
 Ensure the Node Type name for the secondary cluster in the ARM Template matches with that in the Placement constraint in the Service Manifests.
 
+### Deploying the application to Service Fabric using Jenkins
+
+The ARM Template deploys the cluster inside a VNet. Hence the Management endpoints used to deploy the application cannot be accessed from the internet, using Azure DevOps. A container image of Jenkins that has the Service Fabric add-on installed, is deployed into a Jumpbox VM in the same VNet as the Cluster.
+
+Refer to the steps described in the article [here](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-cicd-your-linux-applications-with-jenkins#configure-deployment-using-azure-credentials) to use the Addin and deploy the Application to the cluster.
+Broadly the steps performed were:
+//Pull the Docker images into the Jumpbox Linux VM
+docker pull rapatchi/jenkins:latest
+
+//Run the Docker container for Jenkins
+docker run -itd -p 8080:8080 rapatchi/jenkins:latest
+
+//Get the Jenkins Admin password for the Container instance
+cat /var/jenkins_home/secrets/initialAdminPassword
+
+// Copy the Admin client certificate to the Jumpbox VM from the Windows computer (local, dev machine)
+
+//Copy the certificate to the Jenkins Home directory in the container
+docker cp clustercert.pem [first-four-digits-of-container-ID] : /var/jenkins_home
+
