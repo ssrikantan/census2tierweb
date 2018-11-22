@@ -103,7 +103,7 @@ Perform the steps described in the link shared above. and configure the Addin by
 Trigger a Jenkins Build Job manually. The post trigger action pulls the Service Fabric Application packages (generated using Yeoman in the steps above) and deploys it to the cluster.
 See the sample output from this run below.
 
-<img src="./images/jenkinsrun1.png" alt="drawing" height="700px"/>
+<img src="./images/jenkinsrun2.png" alt="drawing" height="700px"/>
 
 Repeat the steps for deployment to the second region, i.e. Southeast Asia
 
