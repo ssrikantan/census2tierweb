@@ -67,6 +67,8 @@ Ensure the Node Type name for the secondary cluster in the ARM Template matches 
 
 The ARM Template deploys the cluster inside a VNet. Hence the Management endpoints used to deploy the application cannot be accessed from the internet, using Azure DevOps. A container image of Jenkins that has the Service Fabric add-on installed, is deployed into a Jumpbox VM in the same VNet as the Cluster.
 
+**Note: Azure DevOps Server 2019 can be deployed inside a Jumpbox VM to deploy the Application to the Service Fabric cluster inside the VNet. This can be an alternative to using Jenkins**
+
 Refer to the steps described in the article [here](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-cicd-your-linux-applications-with-jenkins#configure-deployment-using-azure-credentials) to use the Addin and deploy the Application to the cluster.
 
 Broadly the steps performed were:
@@ -92,13 +94,17 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 //In the VM, copy the certificate to the Jenkins Home directory in the container
 docker cp clustercert.pem [first-four-digits-of-container-ID] : /var/jenkins_home
 
-2) Configure the Addin in Jenkins
+2) Configure the Addin in Jenkins& deploy the Application
 Launch Jenkins in the browser, install the default add-ins, add an Admin user.
 Perform the steps described in the link shared above. and configure the Addin by pointing it to the Service Fabric cluster created earlier.
 
-<img src="./images/sfplugin.png" alt="drawing" height="500px"/>
+<img src="./images/sfplugin.png" alt="drawing" height="700px"/>
 
 Trigger a Jenkins Build Job manually. The post trigger action pulls the Service Fabric Application packages (generated using Yeoman in the steps above) and deploys it to the cluster.
 See the sample output from this run below.
 
-<img src="./images/jenkinsrun.png" alt="drawing" height="500px"/>
+<img src="./images/jenkinsrun2.png" alt="drawing" height="700px"/>
+
+Repeat the steps for deployment to the second region, i.e. Southeast Asia
+
+The remaining steps to be performed are covered in the MSDN magazine article
