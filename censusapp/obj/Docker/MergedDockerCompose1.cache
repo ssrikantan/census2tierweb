@@ -1,7 +1,7 @@
 services:
   censusapp:
     build:
-      context: C:\Users\Srikantansurface\Census2TierWeb\censusapp
+      context: C:\Users\Srikantansurface\census2tierweb\censusapp
       dockerfile: censusapp/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development

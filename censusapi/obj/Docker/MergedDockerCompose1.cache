@@ -1,7 +1,7 @@
 services:
   censusapi:
     build:
-      context: C:\Users\Srikantansurface\Census2TierWeb\censusapi
+      context: C:\Users\Srikantansurface\census2tierweb\censusapi
       dockerfile: censusapi/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
