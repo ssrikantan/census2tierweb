@@ -96,7 +96,7 @@ docker cp clustercert.pem [first-four-digits-of-container-ID] : /var/jenkins_hom
 Launch Jenkins in the browser, install the default add-ins, add an Admin user.
 Perform the steps described in the link shared above. and configure the Addin by pointing it to the Service Fabric cluster created earlier.
 
-<img src="./images/sfplugin.png" alt="drawing" height="500px"/>
+<img src="./images/sfplugin.png" alt="drawing" height="700px"/>
 
 Trigger a Jenkins Build Job manually. The post trigger action pulls the Service Fabric Application packages (generated using Yeoman in the steps above) and deploys it to the cluster.
 See the sample output from this run below.
