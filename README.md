@@ -28,4 +28,38 @@ The Yeoman tool creates an Application and adds two Service types, each represen
 
 <img src="./images/yeomanGen.PNG" alt="drawing" height="700px"/>
 
-Application and Service Manifest xml files generated after this step need some additional configurations. The sample output from this step is included here [Github repo](https://github.com/ssrikantan/census2tierweb/apppkg)
+Application and Service Manifest xml files generated after this step need some additional configurations. (The manifest files are available in this Repo)
+
+### Application Manifest
+The Service DNS Name for the Web API Service needs to be added as shown on the snippet below, so that it is registered with the Service Fabric DNS Service. This is required by the Mvc App when it connects to the API Service in the Cluster. This DNS Name should match that in the appsettings.json file of the Mvc Project.
+~~~
+<DefaultServices>
+    <Service Name="censusapi" ServiceDnsName="sfcensusapi">
+      <StatelessService ServiceTypeName="censusapiType" InstanceCount="2" >
+        <SingletonPartition/>
+      </StatelessService>
+    </Service>
+    <Service Name="censusapp">
+      <StatelessService ServiceTypeName="censusappType" InstanceCount="2">
+        <SingletonPartition/>
+      </StatelessService>
+    </Service>
+</DefaultServices>
+~~~
+
+### Service Manifests
+The Service Fabric cluster deployed here contains 2 Node types, a Primary Node type that hosts only the Service Fabric platform services, and the other (secondary)that runs the Mvc and Web API Container images. In the manifest files of each Service, a placement constraint needs to be added using the Node Type Name of the Secondary cluster, to add the container images to this Node type alone. See the snippet below
+~~~
+<ServiceTypes>
+      <StatelessServiceType ServiceTypeName="censusappType" UseImplicitHost="true">
+		    <PlacementConstraints>(NodeTypeName==nt-sfazvm0)</PlacementConstraints>
+   </StatelessServiceType>
+</ServiceTypes>
+~~~
+
+### Provisioning the Service Fabric cluster
+
+Use the ARM Template **SF-Std-ELB-ZonalDeployment.json** to deploy the cluster to Azure. Refer to the accompanying MSDN Magazine for guidance in completing the pre-requisites to run the ARM Template.
+This step creates 2 Service Fabric clusters, each in a separate Azure Availability Zone in one Region (US East 2). A Standard SKU Load Balancer balances user requests across these two clusters, in an Active-Active configuration. Run the Template again to deploy the cluster to the second region, i.e. Southeast Asia.
+Ensure the Node Type name for the secondary cluster in the ARM Template matches with that in the Placement constraint in the Service Manifests.
+
