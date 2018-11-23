@@ -76,24 +76,25 @@ Broadly the steps performed were:
 Note: For simplicity, a self signed certificate is used here. For Production deployments use Azure AD based authentication to perform the steps.
 
 1) Install Jenkins in the Jumpbox VM
-//Pull the Docker images into the Jumpbox Linux VM
+~~~
+##Pull the Docker images into the Jumpbox Linux VM
 
 docker pull rapatchi/jenkins:latest
 
-//Run the Docker container for Jenkins
+##Run the Docker container for Jenkins
 
 docker run -itd -p 8080:8080 rapatchi/jenkins:latest
 
-//Get the Jenkins Admin password for the Container instance
+##Get the Jenkins Admin password for the Container instance
 
 cat /var/jenkins_home/secrets/initialAdminPassword
 
-// Generate and Copy the Admin client certificate to the Jumpbox VM from the local Windows computer 
-// Use a tool like Winscp to copy the certificate file
+## Generate and Copy the Admin client certificate to the Jumpbox VM from the local Windows computer. Use a tool like Winscp to copy the certificate file
 
-//In the VM, copy the certificate to the Jenkins Home directory in the container
+##In the VM, copy the certificate to the Jenkins Home directory in the container
 
 docker cp clustercert.pem [first-four-digits-of-container-ID] : /var/jenkins_home
+~~~
 
 2) Configure the Addin in Jenkins& deploy the Application
 Launch Jenkins in the browser, install the default add-ins, add an Admin user.
