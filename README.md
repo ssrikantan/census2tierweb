@@ -92,6 +92,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 // Use a tool like Winscp to copy the certificate file
 
 //In the VM, copy the certificate to the Jenkins Home directory in the container
+
 docker cp clustercert.pem [first-four-digits-of-container-ID] : /var/jenkins_home
 
 2) Configure the Addin in Jenkins& deploy the Application
