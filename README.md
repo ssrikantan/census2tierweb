@@ -1,5 +1,5 @@
 # Building and deploying highly available and resilient applications
-A sample application that showcases how highly available and resilient services can be deployed to Azure. can be used to deploy highly available and reliable services. Refer to it in the context of the article published in the MSDN Magazine <to be added later>, that describes the use case and the architecture of the Solution.
+A sample application that showcases how highly available and resilient services can be deployed to Azure. Refer to it in the context of the article published in the MSDN Magazine [here](https://msdn.microsoft.com/en-us/magazine/mt833272), that describes the use case and the architecture of the Solution.
 
 ## Developing the Application
 There are two ASP.NET 2.0 Core Applications, one an Mvc Project **censusapp.sln** and the other, a Web API Project **censusapi.sln**. The Mvc project accepts user input and calls the Web API to store the data in Azure Cosmos DB. The applications are packaged using Docker containers for Linux using the built-in features in Visual Studio 2017. The source files, associated Dockerfile and docker-compose files of these Projects are available in this Repository. Minor edits were done to the docker-compose files of the two projects to add port mapping between the Node and container.
